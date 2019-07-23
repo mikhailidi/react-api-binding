@@ -1,12 +1,21 @@
 import React from 'react';
 import './App.css';
+import Titles from './components/Titles';
+import Weather from './components/Weather';
 
-function App() {
-  return (
-    <div className="App">
+class App extends React.Component {
 
-    </div>
-  );
+    render() {
+        return (
+            <div className="App">
+                <Titles/>
+                <Weather
+                    localTime={123}
+                />
+
+            </div>
+        )
+    };
 }
 
 export default App;
