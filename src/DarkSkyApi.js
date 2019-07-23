@@ -30,6 +30,10 @@ class DarkSkyApi {
             .then(results => {
                 return results.json();
             }).then(data => {
+                if (data.error) {
+                    return;
+                }
+
                 result = data;
             });
 

@@ -18,7 +18,9 @@ class Weather extends React.Component {
     setWeather() {
         let data = DarkSkyApi.getWeather(this.state.city.latitude, this.state.city.longitude);
         data.then(data => {
-            console.log(data);
+            if (!data) {
+                return;
+            }
 
             this.setState({
                 city: {
