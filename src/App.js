@@ -9,9 +9,8 @@ class App extends React.Component {
         return (
             <div className="App">
                 <Titles/>
-                <Weather
-                    localTime={123}
-                />
+                <Weather/>
+
 
             </div>
         )
