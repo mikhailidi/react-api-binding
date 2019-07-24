@@ -19,18 +19,21 @@ export function convertToHourAndMinutes(unixTimeStamp) {
 }
 
 /**
+ * Validate JS Date object.
  *
  * @param d
  * @throws Error
  */
 function validateDate(d) {
     if (!isValidDate(d)) {
-        // Don't really know what are the best practices for handling an error in JS
+        // Don't really know what are the best practices for error handling in JS
         throw new Error();
     }
 }
 
 /**
+ * Assert that Object is a valid JS Date.
+ *
  * @param d
  * @returns {boolean}
  */
