@@ -22,7 +22,7 @@ class DarkSkyApi {
      *
      * @param latitude
      * @param longitude
-     * @returns {Promise<void>}
+     * @returns {Promise<*>}
      */
     static async getWeather(latitude, longitude) {
         let result;
@@ -47,11 +47,10 @@ class DarkSkyApi {
      * @returns {string}
      */
     static getUri = (latitude, longitude) => {
-        let uri = this.baseUri;
-        uri = uri.replace('$$latitude', latitude);
-        uri = uri.replace('$$longitude', longitude);
-
-        return this.proxy + uri;
+        return this.proxy +
+            this.baseUri
+                .replace('$$latitude', latitude)
+                .replace('$$longitude', longitude);
     }
 }
 

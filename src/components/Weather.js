@@ -14,7 +14,6 @@ class Weather extends React.Component {
         weather: {}
     };
 
-
     setWeather() {
         let data = DarkSkyApi.getWeather(this.state.city.latitude, this.state.city.longitude);
         data.then(data => {
@@ -47,12 +46,12 @@ class Weather extends React.Component {
         return (
             <div>
                 {this.state.weather.summary && <p>Summary: {this.state.weather.summary}</p>}
-                {this.state.weather.temperature && <p>Temperature: {this.state.weather.temperature}</p>}
-                {this.state.weather.windSpeed && <p>Wind speed: {this.state.weather.windSpeed}</p>}
+                {this.state.weather.temperature && <p>Temperature: {this.state.weather.temperature} °C</p>}
+                {this.state.weather.windSpeed && <p>Wind speed: {this.state.weather.windSpeed} km/h</p>}
                 {this.state.city.localTime && <p>Local time: {convertToHourAndMinutes(this.state.city.localTime)}</p>}
             </div>
         );
     }
-};
+}
 
 export default Weather;
